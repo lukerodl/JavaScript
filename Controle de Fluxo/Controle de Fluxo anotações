@@ -1,0 +1,78 @@
+1. CONDICIONAL
+uma condicional é uma maneira de fazer o programa tomar decisões com base em condições específicas.
+Estrutura: if () {
+    //bloco de execução
+}; else {
+    //bloco de execução 
+}
+
+OBS: veja que será usado === (três vezes o =) é preciso usar desse jeito para fazer a comparação se algo é igual a outro. === não é a mesma coisa que =.
+EX.
+var nomeUsuario = prompt("escreva seu nome abaixo")
+if (nomeUsuario === "") {
+    alert("O nome não pode ficar em branco")
+    prompt("Insira seu nome abaixo")
+} else {
+    alert("obrigado")
+    console.log(nomeUsuario)
+}
+
+// vai aparecer um prompt pedindo o nome da pessoa, se o nome estiver em branco, vai aparecer o resultado do if. Agora,
+se o nome estiver preenchido, aparecerá o else. 
+
+Outro Exemplo:
+var combustivel = "Gasolina"
+if (prompt("Qual é o tipo de combustível") === combustivel) {
+    alert("Você mandou muito bem, é isso mesmo. Gasolina")
+} else { 
+    alert("errou, a resposta não é essa")
+}
+
+
+EXEMPLO COM IF ELSE:
+var combustível = "água"
+
+if(combustível === "gas"){
+    alert("O carro é movido a gas")
+} else if (combustível === "água"){
+    alert("O carro é movido a água")
+} else if (combustível === "alcool"){
+    alert("o carro é movido a alcool")
+} else {
+    alert("combustível não reconhecido")
+}
+//Primeiro o if, depois vel o if else e o else sempre vem pra finalizar. Logo, se o combustível for gás, água ou alcool, vai aparecer as
+//mensagens que tem no alert de cada if else. Agora se não for nenhuma dessas respostas, o else que funcionará.
+
+REVISÃO:
+var valor = ""
+if (valor){
+    alert("valor verdadeiro")
+} else{
+    alert("valor falso")
+}
+
+A pegadinha é, se entre as aspas tiver algum valor, ele será true, caso contrário será false.
+var valor = "" -> false porque não tem navegador
+var valor = "ana" -> true porque ana é um valor
+var valor -> false porque não tem nenhum valor
+var valor = 0 -> zero não tem valor, então é false
+var valor = 5 -> true, pois 5 é um valor
+var valor = true -> true é um valor
+var valor = false -> está afirmando que é false, então o resultado é false
+
+
+2. OPERADORES EM JS
+==: Verifica se os valores dos operandos são iguais, convertendo os tipos se necessário.
+===: Verifica se os valores dos operandos são iguais e se os tipos são iguais sem conversão.
+!=: Verifica se os valores dos operandos são diferentes, convertendo os tipos se necessário.
+!==: Verifica se os valores dos operandos são diferentes ou se os tipos são diferentes sem conversão.
+>: Verifica se o operando da esquerda é maior que o operando da direita.
+>=: Verifica se o operando da esquerda é maior ou igual ao operando da direita.
+<: Verifica se o operando da esquerda é menor que o operando da direita.
+<=: Verifica se o operando da esquerda é menor ou igual ao operando da direita.
+
+
+&& (E lógico): Retorna true se ambos os operandos são verdadeiros.
+|| (OU lógico): Retorna true se pelo menos um dos operandos é verdadeiro.
+! (NÃO lógico): Inverte o valor booleano do operando (se é verdadeiro, e se eu colocar ! vira negativo).
