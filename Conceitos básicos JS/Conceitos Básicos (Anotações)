@@ -1,0 +1,74 @@
+1. PARA INSERIR O JS NO HTML BASTA INSERIR A INFORMAÇÃO ABAIXO NO HEAD DO HTML. 
+//obs: É importante inserir o defer para que o html seja lido antes do js.
+<script src="caminhodoseujs" type="text/javascript" defer></script>
+
+
+
+
+2. TIPOS DE VARIÁVEIS E VALORES
+Texto (string): carcateres que estão entre aspas
+Inteiros: números inteiros (negativo e positivo e número não decimais)
+Real: Numéricos com valores decimais (negativo e positvo)
+Lógico (boolenos): São as alternativas (sim ou não; verdadeiro ou falso etc)
+
+/*A variável é um espaço reservado para armazenar dados. Esses dados podem ser modificados e manipulados depois.
+Primeiro é preciso declarar uma var e depois atribuir um valor a ela. 
+EX. var nome (declarando a variável nome)
+nome = "Lucas" (=atribuindo o valor "lucas" a variável "nome") ------ (para atribuir tem que inserir "=")*/
+
+
+
+
+
+3. OPERADORES MATEMÁTICAS: 
++, -, *, /, ** (exponenciação - números elevados a outro), % (modulo, que é o valor do que sobrou de uma divisão)
+
+              var primeiroNumero = 1
+              var segundoNumero = 2
+              var terceiroNumero = 3
+        var soma = primeiroNumero + segundoNumero
+        var subtração = segundoNumero - primeiroNumero
+        var multiplicação = segundoNumero * terceiroNumero
+        var potenciação = segundoNumero ** segundoNumero //não vai aparecer 2², será exibido o resultado 4
+
+
+
+
+4. PARA EXIBIR ALGUMA INFORMAÇÃO NA TELA USA-SE:
+console.log ("string", variável)  //Nesse caso é preciso escrever a variável que é para aparecer (interessante inserir a string [depois da string vem a vírgula])
+
+Também é possível fazer a   "soma" de textos.
+                var textoa = "Olá,"
+                var textob = "Eu sou o Lucas"
+                var textoc = " "
+                var resultadoA = textoa + textoc + textob
+console.log(resultadoA)
+
+
+
+
+5. PROMPT e ALERT:
+PROMPT é uma das maneiras para recebermos uma informação do usuário. Ao abrir uma variável prompt, exibirá no navegador
+um campo para inserirmos algum texto. Já o ALERT ele só vai informar algo no navegador sem pedir para o usuário preencher algo.
+
+alert("Seja Bem-Vindo")
+var NomeInserido = prompt("insira seu nome:") //vai aparecer tipo um alert para o usuário inserir o nome
+
+//info +: além disso, é possível juntar os dois comandos, pedindo pra inserir um número e depois exibir esse número no alert.
+var entrada = prompt("insira um número")
+var saida = "Obrigado! O número" + " " + entrada + " " + "foi adicionado com sucesso"
+alert(saida)
+
+OBS: Tudo que coloca-se em prompt, ele retorna como texto. Caso seja preciso converter essa string em número é preciso
+usar uma função chamada parseInt. Então sempre quando for preciso coletar um número do usuário, insira o parseInt pra não dar B.O na hora de usar o número.
+         var valorString = prompt("insira um número")
+         var valorConvertido =parseInt(valorString)
+         console.log(valorConvertido)
+
+OBS@: Agora, se o número que é preciso converter seja quebrado (ou inteiro também), usa-se parseFloat
+var primeiroNumero = prompt ("insira um número")
+var primeiraConversão = parseFloat(primeiroNumero)
+var segundoNumero = prompt ("insira mais um número")
+var segundaConversão = parseFloat(segundoNumero)
+var resultado = primeiraConversão * segundaConversão
+console.log (resultado)
