@@ -1,0 +1,74 @@
+        1. FUNÇÕES (CONCEITOS GERAIS)
+a) Funções no JavaScript são blocos de código reutilizáveis que realizam uma tarefa específica. Elas ajudam a organizar o código e a evitar repetições.
+b) Um function só vai funcionar quando você chamar ela, não basta apenas criar, tem que chamar ela para que funcione.
+c) Não importa onde a function esteja, vocÊ pode chamar ela a qualquer momento (antes ou depois de onde ela estiver)
+d) É possível fazer um file somente pra colocar as functions, assim fica bem organizado. Mas tanto faz.
+e) Podemos chamar ela quantas vezes quisermos dentro do código.
+
+
+DECLARAÇÃO:
+function nomefunction () {             
+    //conteúdo
+}
+
+Depois para chamar ela é só colocar:
+nomefunction ()
+
+
+Antes para pedir o nome de alguém no prompt, por exemplo, tinhamos que fazer duas variáveis.
+EXEMPLO:
+var nome1 = prompt("inserir nome")
+alert("O nome inserido é " + nome1)
+
+var nome2 = prompt("inserir nome")
+alert("O nome inserido é " + nome2)
+
+
+Agora usamos function pra otimizar linhas:
+EXEMPLO:
+function functionname () {
+    var name = prompt("inserir nome")
+    alert("O nome inserido é " + name)
+}
+functionname ();
+functionname ();
+
+
+          2. ARGUMENTOS E PARÂMETROS
+parâmetros são como espaços reservados esperando por valores quando você define uma função, e argumentos são os valores reais que você fornece quando você chama essa função
+Se eu possuo 3 parâmetros eu preciso que tenha 3 argumentos (separados por vírgulas).
+
+function nomefunction () {         ------> O valor dentro desse () é um parâmetro
+            //conteúdo
+        }
+
+ Depois para chamar ela é só colocar:
+        nomefunction ()              ------> O valor dentro desse () é um argumento
+
+
+           3.RESULTADO DE UMA FUNÇÃO
+           Quando o return é usado em uma função, você está dizendo que quer que a função lhe dê de volta um resultado depois de fazer alguma coisa.
+
+function somar(primeironumero, segundonumero) {
+    return primeironumero + segundonumero;
+}
+var resultado = somar(5, 8);
+console.log("Resultado " + resultado);
+
+A função somar recebe dois números (5 e 8).
+Ela calcula a soma desses números (5 + 8), que é 13.
+Em seguida, return faz a função dar de volta o resultado 13.
+Esse resultado é armazenado na variável resultado.
+Por fim, console.log mostra "Resultado 13" no console.
+O return simplesmente envia o resultado de volta para onde a função foi chamada.
+
+
+4.FUNÇÃO ANONIMA e ARROW FUNCTION
+A função anonima é basicamente a mesma coisa, só que a função não tem nome. (podemos fazer de maneira abreviada)
+EXEMPLO:
+var somar = function (a, b) {return a + b}
+console.log(soma(15,20))
+
+Agora, a arrow function são anonimas também com uma sintaxe sintáticas e não usa nem a palavra function, e sim a seta subtitui a palavra
+var soma = (a, b) => {return a + b}
+console.log(soma(15, 20))
