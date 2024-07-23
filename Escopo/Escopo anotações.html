@@ -1,0 +1,141 @@
+1. ESCOPO GLOBAL E LOCAL
+Em JavaScript, o "escopo" determina onde no seu código você pode acessar uma variável. Se uma variável está definida globalmente, você pode usá-la em qualquer lugar do seu código. 
+Se ela está definida dentro de uma função ou bloco específico, você só pode usá-la dentro dessa função ou bloco.
+
+O escopo é basicamente o que fica dentro de uma chave
+EX.
+
+function name() {
+    //isso é um escopo e os dados serão trabalhados só aqui
+}
+
+
+No escopo global, as variáveis são definidas fora de qualquer função ou bloco. Elas podem ser acessadas em qualquer lugar do seu código JavaScript.
+EX.
+// Exemplo de variável global
+var nome = "João";
+
+function saudacao() {
+    console.log("Olá, " + nome); // A variável 'nome' está acessível aqui
+}
+
+saudacao(); // Saída: Olá, João
+console.log("Bom dia, " + nome); // Também acessível aqui
+
+
+Variáveis declaradas com let e const têm escopo de bloco, o que significa que elas só podem ser acessadas dentro do bloco em que são definidas
+EX.
+function exemploBloco() {
+    if (true) {
+        var idade = 30; // Escopo antigo (global ou de função)
+        let nome = "Maria"; // Escopo de bloco
+        const cidade = "São Paulo"; // Escopo de bloco
+
+        console.log(nome); // Acesso permitido dentro do bloco
+    }
+
+    console.log(idade); // Acesso permitido (escopo global)
+    console.log(nome); // Erro: 'nome' is not defined (escopo de bloco)
+    console.log(cidade); // Erro: 'cidade' is not defined (escopo de bloco)
+}
+
+
+2. VARIÁVEIS GLOBAIS E VARIÁVEIS LOCAIS
+Variáveis Globais: Conhecidas por todos no programa, podem ser usadas em qualquer lugar.
+Variáveis Locais: Conhecidas apenas em uma parte específica do programa, como dentro de uma função ou bloco.
+
+
+
+3. CONST, LET E VAR 
+VAR
+O que é?: Um saco de brinquedos que pode ser levado para qualquer lugar e suas regras são menos rigorosas. Se você mudar o brinquedo, ele pode ficar visível fora da caixa.
+var brinquedo = 'carro';
+console.log(brinquedo);  // Sai 'carro'
+brinquedo = 'boneca';
+console.log(brinquedo);  // Sai 'boneca'
+
+
+LET
+O que é?: Um saco de brinquedos moderno e flexível. Você pode trocar brinquedos e ele é mais regrado do que o var.
+Ele nos ajuda a trabalhar com escopo de bloco.
+let brinquedo = 'carro';
+console.log(brinquedo);  // Sai 'carro'
+brinquedo = 'boneca';
+console.log(brinquedo);  // Sai 'boneca'
+                            
+
+CONST
+O que é?: Um armário onde você não pode trocar o brinquedo, mas pode modificar as peças dentro.
+const brinquedo = 'carro';
+console.log(brinquedo);  // Sai 'carro'
+// brinquedo = 'boneca';  // Dá erro! Não pode mudar o brinquedo
+
+ 
+
+4. HOSTING
+Hoisting é um comportamento em JavaScript onde declarações de variáveis e funções são movidas para o topo do escopo antes da execução do código.
+Variáveis com var e Funções são “elevadas” para o topo.
+Variáveis com let e const são “elevadas”, mas não podem ser usadas antes da declaração.
+
+
+// Hoisting com var
+console.log(a);  // undefined
+var a = 1;
+console.log(a);  // 1
+
+// Hoisting com let e const (não funciona assim)
+console.log(b);  // ReferenceError: Cannot access 'b' before initialization
+let b = 2;
+
+// Hoisting de Funções
+hello();  // 'Hello!'
+function hello() {
+  console.log('Hello!');
+}
+
+ RESUMINDO:
+ VAR: escopo global e local, redeclara, reatribui e hosting.
+ CONST: escopo de bloco e não redeclara, não retribui e não hosting.
+ LET: escopo de bloco, não redeclara e não hosting, mas retribui.
+
+
+
+
+ 5. CONTEXTO (THIS)
+ this é uma palavra-chave especial que se refere ao objeto que está executando a função onde this aparece.
+ Em Funções Simples: this se refere ao objeto global (window no navegador ou global no Node.js), ou é undefined em "strict mode".
+      EX. 
+      function show() {
+        console.log(this); // Mostra o objeto global (window ou global)
+      }
+      show();
+
+Em Métodos de Objetos: this se refere ao objeto que está chamando o método.
+const car = {
+    brand: 'Toyota',
+    showBrand() {
+      console.log(this.brand); // 'this' é o objeto 'car'
+    }
+  };
+  car.showBrand(); // Mostra 'Toyota'
+  
+Em Funções de Construtor: this se refere ao novo objeto criado pela função construtora.
+     EX. 
+     function Person(name) {
+        this.name = name;
+      }
+      const p1 = new Person('Alice');
+      console.log(p1.name); // 'Alice'
+
+
+
+      Global: this é o objeto global (ou undefined no "strict mode").
+      Métodos: this é o objeto que está chamando o método.
+      Construtores: this é o novo objeto criado.
+      bind, call, apply: Você define o this manualmente.
+      
+      
+      
+      
+
+      
