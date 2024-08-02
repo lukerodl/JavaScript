@@ -1,0 +1,61 @@
+//CICLOS ajudam você a repetir uma tarefa várias vezes sem ter que escrever o mesmo código repetidamente.
+for: Ideal quando você sabe quantas vezes precisa repetir algo.
+while: Ideal quando você quer repetir algo enquanto uma condição for verdadeira.
+do...while: Executa a tarefa pelo menos uma vez e depois continua enquanto a condição for verdadeira.
+
+
+
+
+//CICLO FOR: 
+//Pense no ciclo for como uma lista de tarefas. Você tem uma lista de amigos e vai convidá-los um a um até que todos tenham recebido o convite.
+//LAÇO POR CONTAGEM -> repete um bloco por um determinado número de vezes.
+            let amigos = ["Ana", "João", "Pedro", "Maria"];
+            for (let i = 0; i < amigos.length; i++) {
+            console.log("Convidei " + amigos[i] + " para a festa.");
+            }
+                    for: O comando que inicia o ciclo.
+                    let i = 0: Começamos com o primeiro amigo da lista (índice 0).
+                    i < amigos.length: Continuamos até que todos os amigos na lista sejam convidados.
+                    i++: Passa para o próximo amigo na lista.
+
+
+//O Ciclo WHILE:
+//LAÇOES CONDICIONAIS -> RFepeto um bloco até a afirmação for verdadeira.  
+//O ciclo while é como uma missão de fazer algo "enquanto" uma condição for verdadeira. Imagine que você está na festa e vai dar um pedaço de bolo para seus amigos "enquanto" eles ainda estiverem na fila.
+            let amigos = ["Ana", "João", "Pedro", "Maria"];
+            let i = 0;
+
+            while (i < amigos.length) { 
+            console.log("Dando bolo para " + amigos[i] + ".");
+            i++;
+            }
+                    while (i < amigos.length): A condição de que você só vai dar bolo enquanto houver amigos na fila.
+                    console.log(...): A tarefa de dar o bolo.
+                    i++: Vai para o próximo amigo na fila.
+
+
+//O Ciclo DO WHILE:
+//LAÇOES CONDICIONAIS -> RFepeto um bloco até a afirmação for verdadeira.  
+//O ciclo do...while é como uma tarefa que você faz pelo menos uma vez, e depois continua fazendo enquanto uma condição for verdadeira. Imagine que você vai dar um presente a cada amigo, e vai verificar se ainda há amigos para presentear depois de cada entrega.
+            let amigos = ["Ana", "João", "Pedro", "Maria"];
+            let i = 0;
+
+            do {
+            console.log("Dando presente para " + amigos[i] + ".");
+            i++;
+            } while (i < amigos.length);
+                    do: A tarefa a ser realizada.
+                    while (i < amigos.length): A condição para continuar fazendo a tarefa.
+                    console.log(...): A tarefa de dar o presente.
+            
+
+// O Ciclo FOR...OF
+//O ciclo for...of é como um modo automático de percorrer todos os amigos, sem se preocupar com a posição na lista. É como uma festa em que você simplesmente vai cumprimentar cada amigo na fila sem se preocupar com números.
+let amigos = ["Ana", "João", "Pedro", "Maria"];
+
+            for (let amigo of amigos) {
+            console.log("Oii " + amigo + "!");
+}
+
+                    for (let amigo of amigos): Para cada amigo na lista.
+                    console.log(...): Cumprimenta o amigo.

@@ -1,0 +1,196 @@
+Um objeto em programação é uma entidade que combina dados (chamados propriedades ou atributos) e funcionalidades (chamadas métodos).
+Pense em um objeto como um brinquedo de pelúcia.  Propriedades: características do brinquedo, como cor, tamanho, tipo de animal.
+Métodos: coisas que você pode fazer com o brinquedo, como apertar para fazer barulho, abraçar, ou jogar.
+
+O objeto é nada mais é do que algo que comporta várias informações de um único dado/elemento.
+
+
+Sintaxe de um objeto (armazena as propriedades em uma chave e essas propriedades são separadas por vírugulas e o valor sempre virá depois dos dois pontos):~
+let xícara {
+    cor: "branca",
+    forma: "redonda",
+}
+
+Para conseguirmos ver os resultados no console, temos duas opções. Usando "." e usando "[]". Veja abaixo:
+console.log(xicara) -> vai aparecer todo o objeto
+console.log(xicara.cor) -> vai aparecer a propriedade(cor)
+console.log(xicara ["forma"]) -> vai aparecer a propriedade(forma)
+
+
+ATRIBUIÇÃO
+Podemos acessar atribuindo novos valores aos dados armazenados na propriedade do objeto
+xicara.peso = 7
+xicara["cor"] = rosa
+
+Atribuimosa cor rosa para a xicara e o peso 7.
+
+
+
+
+
+
+CONSTRUTOR e NEW
+Usa-se construtores e new para criar novos objetos. É especialmente útil quando queremos criar vários objetos com as mesmas propriedades (características) e métodos (ações), sem precisar repetir código.
+
+Ao invés de fazermos assim:
+let personagem1 = { nome: "Alice", tipo: "Guerreiro", vida: 100 };
+let personagem2 = { nome: "Bob", tipo: "Mago", vida: 80 };
+
+
+function personagens (nome, poder, cor) {
+    nome = "nome"
+    poder = "poder"
+    cor = "cor"
+}
+
+personagem1 = new ("Huck", "Força", "Verde")
+console.log(personagem1)
+
+uma boa prática é colocar sempre o nome da function construtora com a primeira letra maiuscula, pra diferenciar das outras functions normais
+
+USO DO THIS
+Usamos o this para referir o elemento atual que está sendo escrito no código. This garante que as propriedades do objeto estejam sendo utilizadas.
+
+
+
+####################################################
+
+
+MÉTODOS E OPERAÇÕES COM OBJETOS
+Função: Um bloco de código que executa uma tarefa específica e pode ser chamado em qualquer parte do programa.
+        É como uma receita de bolo que você pode seguir a qualquer momento.
+
+
+Método: Uma função que está associada a um objeto e geralmente manipula os dados do objeto.
+        É como a receita de um bolo que só o "Bolo Alice" sabe fazer, pois está dentro dele.
+
+
+Os métodos também são funções, mas são limitados à execução a partir de um objeto. Ou seja, eu declaro uma função (chamada de método) dentro de um objeto, e para chamar essa função, preciso ter uma instância (objeto criado a partir de uma classe).
+Podemos criar nossos próprios métodos para objetos personalizados, referenciando funções por seu nome ou definindo funções anônimas associadas a uma propriedade da função construtora. Chamar um método é similar a acessar uma propriedade, mas se acrescenta () ao final do nome do método, possivelmente com argumentos.
+
+EX.
+function pessoa (nome, idade, rua) {
+    this.nome = nome
+    this.idade = idade
+    this.rua = rua
+    this.falar = funtion () {
+        console.log("Olá, eu sou " + this.nome)
+    }
+}
+
+const pessoa1 = new pessoa ("Lucas", 23, "Nelson Rieke")
+const pessoa2 = new pessoa ("Bruno", 23, "Jardim avenida")
+
+pessoa1.falar()
+pessoa2.falar()
+
+O this.falar = function {} seria o nosso metodo, nesse CacheStorage.
+
+
+PROPRIEDADE E MÉTODOS EM OBJETOS JS
+O JavaScript conta com seus próprios objetos, incluindo alguns que já usamos sem identificar que são objetos.
+
+São alguns deles:
+
+
+
+
+
+PARA STRING
+length: Retorna o número de caracteres na string.
+let texto = "Olá Mundo";
+console.log(texto.length); // Saída: 9
+
+toUpperCase(): Converte todos os caracteres da string para maiúsculas.
+let texto = "Olá Mundo";
+console.log(texto.toUpperCase()); // Saída: OLÁ MUNDO
+
+toLowerCase(): Converte todos os caracteres da string para minúsculas.
+let texto = "Olá Mundo";
+console.log(texto.toLowerCase()); // Saída: olá mundo
+
+slice(start, end): Extrai uma parte da string e retorna a nova string.
+let texto = "Olá Mundo";
+console.log(texto.slice(0, 3)); // Saída: Olá
+
+replace(substring, newSubstring): Substitui a primeira ocorrência da substring pela nova substring.
+let texto = "Olá Mundo";
+console.log(texto.replace("Mundo", "Amigo")); // Saída: Olá Amigo
+
+split(separator): Divide a string em um array de substrings.
+let texto = "Olá Mundo";
+console.log(texto.split(" ")); // Saída: ["Olá", "Mundo"]
+
+
+
+OPERADOR IN
+operador in retorna true se a propriedade especificada existir no objeto.
+
+const pessoa = {
+    nome: "Lucas"
+    idade: 23
+    Sexo: "Masculino"
+}
+
+console.log("nome" in pessoa) //vai retornar true, porque tem a chave "nome" no escopo "pessoa"
+console.log("origem" in pessoa) //vai retornar falso, porque não existe a chave "origem" no escopo pessoa.
+
+
+
+OPERADOR FOR IN
+o loop for... in permite acessar todas as propriedades do objeto, obtendo uma pripriedade para cada interação.
+Caso queira conferir todos as propriedades de um objeto, ao inves de buscar por "nome" in pessoa, por exemplo, tu vai colocar assim:
+
+const pessoa = {
+    nome: "Lucas"
+    idade: 23
+    Sexo: "Masculino"
+}
+
+for (const propriedade in pessoa) {
+    console.log(pessoa.propriedade)  //veja que propriedade, o que estiver no for, tem que estar em []
+}
+
+
+Para exibir a propriedade e seu valor, você deve concatenar o nome da propriedade, um sinal de igual =, e o valor da propriedade do objeto. Use a notação objeto[propiedade] para acessar o valor.
+function fruta(nome, cor, formato){
+    this.nome = nome,
+    this.cor = cor,
+    this.formato = formato
+}
+
+let fruta1 = new fruta("laranja", "amarela", "arredondada")
+for (const propiedadesfrutas in fruta1) {
+    console.log(propiedadesfrutas + " = " + fruta1[propiedadesfrutas]) // imprimindo a propriedade e o valor dela
+}
+
+
+
+
+CLASSES
+As classes do JavaScript são modelos para objetos com uma sintaxe mais clara e simples.
+A gente pode criar uma classe e por meio delas criar nossos objetos. Se um objeto não tiver aquilo que a classe está pedindo, o resultado será false. 
+
+
+CLASSES E MÉTODOS
+Na declaração da classe, a função construtora é subistituida pelo método constructor.
+Os métodos nas classes não referenciam propriedades, são declarados dentro do bloco sem a palavra function.
+obs: usa-se sempre PascalCase para definir as classes e seu nome deve ser um substantivo.
+
+// Definindo uma classe
+class Carro {
+    constructor(marca, modelo) {  // veja que agora não estamos mais usando função construtora -> function (){} <- e sim um método construtor. ou seja, escrevemos constructor dentro da chaves da class e colocaoos nossas propriedades
+      this.marca = marca;
+      this.modelo = modelo;
+    }
+  
+    apresentar() {
+      console.log(`${this.marca} - ${this.modelo}`);
+    }
+  }
+  
+  // Criando um objeto da classe Carro
+  const meuCarro = new Carro("Toyota", "Corolla");
+  
+  // Usando o método do objeto
+  meuCarro.apresentar(); // Saída: Toyota - Corolla
